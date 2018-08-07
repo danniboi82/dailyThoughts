@@ -4,6 +4,7 @@ const app = express();
 const cors = require('cors');
 const bodyParser = require('body-parser');
 const errorHandler = require('./handlers/error');
+const authRoutes = require('./routes/auth');
 
 const PORT = process.env.PORT || 8282;
 
@@ -11,7 +12,7 @@ app.use(cors());
 
 app.use(bodyParser.json());
 
-
+app.use('/api/auth', authRoutes);
 //error function to run IF NONE of routes above don't work 
 app.use(function(req, res, next){
     let err = new Error("Not Found");
