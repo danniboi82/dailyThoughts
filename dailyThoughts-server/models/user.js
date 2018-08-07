@@ -20,7 +20,11 @@ const userSchema = new mongoose.Schema({
     },
     profileImageUrl: {
         type: String,
-    }
+    },
+    thoughts: [{
+        type: mongoose.Schema.Types.ObjectId,
+        ref: 'Thought'
+    }]
 })
 
 //get user password and hash it with bcrypt before sending it off as data

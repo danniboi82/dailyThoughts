@@ -10,4 +10,5 @@ mongoose.connect("mongodb://localhost/dailyThoughts", {
 
 
 module.exports.User = require('./user');
+module.exports.Thought = require('./thought');
 
