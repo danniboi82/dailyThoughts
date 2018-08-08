@@ -13,8 +13,19 @@ body {
 
 }
 
-
 .nav-menu  a:hover {
   color: lightseagreen;
   font-weight: bold;
  }
+
+.hero-container {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('https://tedideas.files.wordpress.com/2017/10/v2_featured_art_disagree_convo_istock.jpg?w=750');
+  height: 100vh;
+  background-size: 100% 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+color: white;
+
+}
