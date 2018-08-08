@@ -1,24 +1,34 @@
 import React, {Component} from 'react';
 import {Link} from 'react-router-dom';
-
+import {connect} from 'react-redux';
+import logo from '../images/squirrel.png';
 class Navbar extends Component {
     constructor() {
         super();
-        this.state = {
-            isAuthenticated: false
-        }
+
     }
 
     render() {
         return (
-            <nav className="navbar navbar-expand">
-                <div className="container-fluid">
-                    <div className="navbar-header"></div>
-                    <ul className="navbar-menu navbar-right">
-                        <li className="menu-item"></li>
-                    </ul>
+            <div className="navbar navbar-expand-lg navbar-light bg-light">
+                <div className="container">
+                    <Link to='/' className="navbar-brand">
+                        <img src={logo} alt="" width='55px'/>
+                    </Link>
+                    <div className="navbar-nav nav-menu ml-auto">
+                        <Link to='/signup' className="nav-item">Sign-up</Link>
+                        <Link to='/signin' className="nav-item">Sign-in</Link>
+                    </div>
                 </div>
-            </nav>
+            </div>
         )
     }
 }
+
+function mapStateToProps(state){
+    return {
+        currentUser: state.currentUser,
+    };
+};
+
+export default connect(mapStateToProps, null)(Navbar);
